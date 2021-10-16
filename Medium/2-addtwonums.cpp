@@ -21,14 +21,12 @@ public:
         while (l1pos != nullptr && l2pos != nullptr) {
             int curr_sum = curr->val + l1pos->val + l2pos->val;
             curr->val = curr_sum % 10;
-            if (curr_sum + curr->val >= 10) {
+            if (curr_sum >= 10) {
                 curr->next = new ListNode(curr_sum / 10);
-            } else {
-                if (l1pos->next != nullptr && l2pos->next != nullptr) {
-                    curr->next = new ListNode();
-                }
+            } else if (l1pos->next != nullptr || l2pos->next != nullptr) {
+                curr->next = new ListNode();
             }
-
+            
             curr = curr->next;
             l1pos = l1pos->next;
             l2pos = l2pos->next;
@@ -37,9 +35,9 @@ public:
         while (l1pos != nullptr) {
             int curr_sum = curr->val + l1pos->val;
             curr->val = curr_sum % 10;
-            if (curr_sum + curr->val >= 10) {
+            if (curr_sum >= 10) {
                 curr->next = new ListNode(curr_sum / 10);
-            } else {
+            } else if (l1pos->next != nullptr) {
                 curr->next = new ListNode();
             }
 
@@ -50,9 +48,9 @@ public:
         while (l2pos != nullptr) {
             int curr_sum = curr->val + l2pos->val;
             curr->val = curr_sum % 10;
-            if (curr_sum + curr->val >= 10) {
+            if (curr_sum >= 10) {
                 curr->next = new ListNode(curr_sum / 10);
-            } else {
+            } else if (l2pos->next != nullptr) {
                 curr->next = new ListNode();
             }
 
