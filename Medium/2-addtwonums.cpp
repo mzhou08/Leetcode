@@ -1,6 +1,11 @@
 #include <cstddef>
 #include <iostream>
 
+/*
+Runtime: 32 ms, faster than 63.73% of C++ online submissions for Add Two Numbers.
+Memory Usage: 71.5 MB, less than 10.81% of C++ online submissions for Add Two Numbers.
+*/
+
 //Definition for singly-linked list.
 struct ListNode {
     int val;
