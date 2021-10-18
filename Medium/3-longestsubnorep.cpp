@@ -15,7 +15,7 @@ public:
     struct dict {
         char val;
         int index;
-        dict() : val(NULL), index(-2) {} 
+        dict() : val('\0'), index(-2) {} 
         dict(char x, int ind) : val(x), index(ind) {}
     };
 
