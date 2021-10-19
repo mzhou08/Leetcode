@@ -10,6 +10,11 @@ Runtime: 132 ms, faster than 11.94% of C++ online submissions for Longest Substr
 Memory Usage: 104.4 MB, less than 9.22% of C++ online submissions for Longest Substring Without Repeating Characters.
 */
 
+/*
+Notes: You can use vector[char] to access an vector of ints with length 128.
+Makes this problem a lot easier.
+*/
+
 class Solution {
 public:
     struct dict {
