@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <vector>
 #include <string>
-
+/*
+ * Runtime: 0 ms, faster than 100.00% of C++ online submissions for Consecutive Characters.
+ * Memory Usage: 6.7 MB, less than 71.89% of C++ online submissions for Consecutive Characters.
+ */
 class Solution {
 public:
     int maxPower(std::string s) {
