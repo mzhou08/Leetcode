@@ -2,37 +2,37 @@
 #include <vector>
 #include <iostream>
 
+/*
+Runtime: 9 ms, faster than 37.11% of C++ online submissions for Count and Say.
+Memory Usage: 6.5 MB, less than 76.70% of C++ online submissions for Count and Say.
+*/
+
 class Solution {
 public:
   std::string countAndSay(int n) {
-    if (n == 1) {
-      
-      return "1";
+    if (n == 1) return "1";
+    if (n == 2) return "11";
 
-    } else {
-      
-      std::string prev = countAndSay(n-1);
-      std::string res = "";
-      char curr = prev[0];
-      char count = 1;
+    std::string prev = countAndSay(n-1);
+    std::string res = "";
+    int count = 1;
+    int len = prev.size();
 
-      for (int i = 1; i < prev.length(); i++) {
-        if (prev[i] == curr) {
-          count ++;
-	} else {
-          std::string to_add = to_string(count) + curr;
-          cout << to_add;
-
-	  res = res + to_add;
-	  curr = prev[i];
-	  count = 1;
-	}
+    for (int i = 1; i < len; i++) {
+      if (prev[i] == prev[i -1]) {
+        count++;
+      } else {
+        res += '0' + count;
+        res += prev[i-1];
+        count = 1;
       }
-      
-      std::string to_add = to_string(count) + curr;
-      res = res + to_add;
 
-      return res;
+      if (i == len - 1) {
+
+        res += '0' + count;
+        res += prev[i];
+      }
     }
+    return res;
   }
 };
