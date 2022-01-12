@@ -1,6 +1,12 @@
 #include <string>
 #include <vector>
 
+/*
+Submission Statistics:
+Runtime: 471 ms, faster than 9.27% of C++ online submissions for Palindrome Partitioning.
+Memory Usage: 140.7 MB, less than 21.83% of C++ online submissions for Palindrome Partitioning.
+*/
+
 class Solution {
 public:
     std::vector< std::vector<std::string> > partition(std::string s) {
