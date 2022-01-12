@@ -3,8 +3,8 @@
 
 /*
 Submission Statistics:
-Runtime: 471 ms, faster than 9.27% of C++ online submissions for Palindrome Partitioning.
-Memory Usage: 140.7 MB, less than 21.83% of C++ online submissions for Palindrome Partitioning.
+Runtime: 242 ms, faster than 30.49% of C++ online submissions for Palindrome Partitioning.
+Memory Usage: 53.5 MB, less than 61.86% of C++ online submissions for Palindrome Partitioning.
 */
 
 class Solution {
@@ -24,11 +24,9 @@ public:
         int start,
         std::vector<std::vector<bool> > &palins,
         std::vector<std::vector<std::string> > &res,
-        std::vector<std::string> curr_list) {
+        std::vector<std::string> &curr_list) {
         if (start >= s.length()) {
             res.push_back(curr_list);
-            std::vector<std::string> temp;
-            curr_list = temp;
             return;
         }
 
