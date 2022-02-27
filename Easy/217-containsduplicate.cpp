@@ -1,4 +1,5 @@
 #include <unordered_set>
+#include <vector>
 
 /* Runtime: 106 ms, faster than 73.58% of C++ online submissions for Contains Duplicate.
    Memory Usage: 51.4 MB, less than 48.21% of C++ online submissions for Contains Duplicate.
