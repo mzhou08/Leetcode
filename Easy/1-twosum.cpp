@@ -1,20 +1,24 @@
 #include <vector>
-#include <algorithm>
+#include <map>
 
 using namespace std;
 
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
-            vector<int> ls;
-            for (int i = 0; i <= nums.size(); i++) {
-                for (int j = 0; j < i; j++) {
-                    if (nums[j] == target - nums[i]) {
-                        ls = {i, j};
-                        return ls;
-                    }
-                }
-            }
-            return ls;
-        }
+            map<int, int> indices;
+
+            for (int i = 0; i < nums.size(); i++) {
+                // map<int, int>::iterator it = indices.find(target - nums[i]);
+
+                // if (it != indices.end()) {
+                if (indices.count(target - nums[i])) {
+                    return {i, indices[target - nums[i]]};
+                };
+
+                indices[nums[i]] = i;
+            };
+
+            return {-1, -1};
+        };
 };
