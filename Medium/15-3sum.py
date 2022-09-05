@@ -1,6 +1,3 @@
-# Runtime: 1007 ms, faster than 66.76% of Python3 online submissions for 3Sum.
-# Memory Usage: 18.1 MB, less than 38.93% of Python3 online submissions for 3Sum.
-
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums = sorted(nums)
@@ -10,6 +7,7 @@ class Solution:
                 return res
             # Want to skip all duplicates
             elif i == 0 or nums[i] != nums[i - 1]:
+            # TwoSum II Two Pointers approach
                 hi = len(nums) - 1
                 lo = i + 1
     
@@ -29,7 +27,28 @@ class Solution:
                 
         return res
                 
-                
+# No Sort Approach
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         res = set()
+#         seen = set() # to remove duplicates, since list is unsorted
+        
+#         values_seen_in_iteration = {}
+#         # Track what values we've seen in what iteration
+#         # value: iteration pairs
+        
+#         for i, ival in enumerate(nums):
+#             if ival not in seen: # so not duplicate
+#                 seen.add(ival)
+#                 for j, jval in enumerate(nums[i + 1:]): # iterate through rest of list
+#                     complement = -jval - ival
+#                     if complement in values_seen_in_iteration and values_seen_in_iteration[complement] == i:
+#                         # if the complement is has been seen in the ith iteration
+#                         res.add(tuple(sorted([ival, jval, complement])))
+#                     # mark jval as having been seen in the ith iteration
+#                     values_seen_in_iteration[jval] = i
+                    
+#         return res
         
 # Unsorted Approach: gave me TLE        
 #         pairsDict = {}
@@ -54,4 +73,6 @@ class Solution:
 #                             res.append(sorted([nums[k], nums[pair[0]], nums[pair[1]]]))
                         
 #         return res
-          
+                        
+                    
+            
