@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,6 +22,10 @@ public:
 
     Trie() {
         root = new TrieNode();
+    }
+    
+    ~Trie() {
+        clear(root);
     }
     
     void insert(string word) {
@@ -67,6 +72,17 @@ public:
         }
 
         return true;
+    }
+    
+private:
+    void clear (TrieNode* node) {
+        for (TrieNode* nextNode: node->next) {
+            if (nextNode) {
+                clear(nextNode);
+            }
+        }
+        
+        delete node;
     }
 };
 
