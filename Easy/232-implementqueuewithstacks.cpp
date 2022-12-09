@@ -12,7 +12,7 @@ public:
     
     MyQueue() {
         si s1;
-        si s2;
+        si s2; // reversed ordering, basically queue
         int top;
     }
     
