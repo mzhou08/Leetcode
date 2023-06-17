@@ -45,7 +45,7 @@ void insertHead(DLL* dll, int key, int value) {
     DLLNode* curr_head = dll->head;
 
     // note: new is generally preferred, as you don't need to cast
-    // malloc/free => new/delete
+    // malloc/free => new/delete`
     DLLNode* node = new DLLNode;
     node->key = key;
     node->value = value;
