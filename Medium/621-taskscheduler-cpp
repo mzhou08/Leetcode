@@ -1,0 +1,50 @@
+class Solution {
+public:
+    int leastInterval(vector<char>& tasks, int n) {
+        // each task is done in one unit of time
+        // so between any A and A, for example,
+        // we must wait n
+        // so we can do other stuff in the meantime
+
+        // Keep track of a hash dict of time until next job?
+
+        
+        int counts[26];
+
+        for (int i = 0; i < 26; i++) {
+            counts[i] = 0;
+        }
+
+        for (auto& task : tasks) {
+            int idx = ((int) task) - ((int) 'A');
+
+            counts[idx]++;
+        }
+
+        int maxCount = -1;
+        int maxFreq = 0;
+
+        for (int i = 0; i < 26; i++) {
+            if (counts[i] > maxCount) {
+                maxCount = counts[i];
+                maxFreq = 1;
+            } else if (counts[i] == maxCount) {
+                maxFreq++;
+            }
+        }
+
+
+        return max(
+            (int) tasks.size(), // if the less frequent tasks outnumber the most frequent
+            (n + 1) * (maxCount - 1) + maxFreq
+        );
+
+        /**
+        Greedy solution? 
+        
+        There are at most 26 tasks.
+        All cooldowns are the same, so just pick whichever task
+        has the most remaining ones.
+        */
+    }
+};
