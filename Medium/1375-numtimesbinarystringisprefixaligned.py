@@ -20,21 +20,15 @@ class Solution:
         is prefix-aligned.
         """
 
-        maxBit = 0
-
-        flipTimes = sorted(
-            enumerate(flips),           # (i, time)
-            key=lambda x: x[1]
-        )
+        maxStep = 0
 
         res = 0
 
-        print(flipTimes)
 
-        for idx, step in flipTimes:
-            maxBit = max(maxBit, idx)
+        for idx, step in enumerate(flips, 1):
+            maxStep = max(maxStep, step)
 
-            if (maxBit + 1 == step):
+            if (maxStep == idx):
                 # max bit set so far (1-indexed) is number of
                 # timesteps taken (0-indexed)
                 res += 1
