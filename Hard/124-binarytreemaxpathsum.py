@@ -31,8 +31,6 @@ class Solution:
             root.val
         )
 
-        print(f"root: {root.val} maxatRoot: {maxatRoot} endatRoot: {endatRoot}")
-
         return (
             maxatRoot,
             endatRoot
