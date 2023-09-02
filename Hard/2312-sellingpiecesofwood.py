@@ -8,7 +8,7 @@ class Solution:
         if (m, n) in self.priceMap:
             res = self.priceMap[(m, n)]
 
-        # iterate over all horizantal cuts
+        # iterate over all horizontal cuts
         for i in range(m // 2):
             res = max(
                 res,
@@ -42,7 +42,7 @@ class Solution:
             self.priceMap[(h, w)] = p
 
         self.memo = [
-            [-1 for j in range(n + 1)] for i in range(m + 1)
+            [-1 for _ in range(n + 1)] for _ in range(m + 1)
         ]
 
         return self.helper(m, n)
